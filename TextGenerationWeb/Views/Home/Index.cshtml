@@ -1,0 +1,141 @@
+﻿@{
+    Layout = "~/Layouts/_BasicLayout.cshtml";
+}
+
+<div class="col-md-3">
+    <form id="mcg-text-input-piece-form" action="/MarkovChainText/GenerateText/" role="form">
+        <div class="form-group">
+            <label for="mcg-input-select">Wybierz tekst:</label>
+            <select id="mcg-input-select" class="form-control">
+                <option value="0">W pustyni i w puszczy</option>
+                <option value="1">Władca pierścieni</option>
+                <option value="255">Inne</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="mcg-custom-sentences-limit-input">Ilość zdań:</label>
+            <input id="mcg-custom-sentences-limit-input" class="form-control" type="text"/>
+        </div>
+
+        <button type="submit" class="btn btn-default">Generuj</button>
+    </form>
+</div>
+
+<div class="col-md-9">
+    <p id="mcg-output-text">Sample Markov chain output text.</p>
+    <textarea id="mcg-user-input-text"></textarea>
+</div>
+
+<script type="text/javascript">
+function TextGenerationAjaxRequestSender() {
+    this.generateTextRequest = null;
+}
+
+    $(document).ready(function() {
+        var generateTextRequest;
+
+        var $form = $("#mcg-text-input-piece-form");
+        var $inputSelect = $("#mcg-input-select");
+        var $outputText = $("#mcg-output-text");
+        var $userInputText = $("#mcg-user-input-text");
+        $userInputText.hide();
+        
+        //function executeGenerateTextRequest() {
+        //    generateTextRequest = $.ajax({
+        //        url: "/MarkovChainText/GenerateText/",
+        //        type: "POST",
+        //        data: {
+        //            inputTextType: $inputSelect.val()
+        //        }
+        //    });
+
+        //    generateTextRequest.done(function (response) {
+        //        $outputText.html(response);
+        //    });
+        //}
+
+        // http://stackoverflow.com/questions/456177/function-overloading-in-javascript-best-practices
+        function executeGenerateTextRequest(userInputText) {
+            //var requestUrl = $form.attr("action");
+
+            generateTextRequest = $.ajax({
+                url: "/MarkovChainText/GenerateText/",
+                type: "POST",
+                data: {
+                    inputTextType: $inputSelect.val(),
+                    userInputText: $userInputText.val(),
+                    numberOfSentences: $("#mcg-custom-sentences-limit-input").val()
+                }
+            });
+
+            generateTextRequest.done(function(response) {
+                $outputText.html(response);
+            });
+        }
+
+        $inputSelect.change(function() {
+            if ($(this).val() === "255") {
+                $outputText.hide();
+                $userInputText.show();
+            } else {
+                if ($outputText.is(":visible") === false) {
+                    $outputText.show();
+                    $userInputText.hide();
+                }
+            }
+        });
+
+        $("#mcg-text-input-piece-form").submit(function (event) {
+            event.preventDefault();
+            
+            //alert($("#mcg-input-select option:selected").attr("value"));
+            //alert($("#mcg-input-select").find(":selected").attr("value"));
+            //alert($("#mcg-input-select").val());
+
+            executeGenerateTextRequest();
+
+            //// prevent event from posting a form
+            //event.preventDefault();
+
+            //// abort any pending requests
+            //if (generateTextRequest) {
+            //    generateTextRequest.abort();
+            //}
+
+            //var $form = $(this);
+            //var actionUrl = $form.attr("action");
+
+            //// select and cache all the fields
+            //var $inputs = $form.find("input, select, button, textarea");
+
+            //// serialize data in the form
+            //var serializedData = $form.serialize();
+
+            //// disable inputs during ajax request
+            //// note: elements are disabled AFTER the form data were serialized
+            //// disabled form elements will not be serialized
+            //$inputs.prop("disabled", true);
+
+            //// send request of form
+            //generateTextRequest = $.ajax({
+            //    //url: actionUrl,
+            //    url: "/MarkovChainText/GenerateText",
+            //    type: "POST",
+            //    data: serializedData
+            //});
+
+            //generateTextRequest.done(function(response, textStatus, jqXHR) {
+            //    console.log("generateTextRequest done.");
+            //});
+
+            //generateTextRequest.fail(function(jqXHR, textStatus, errorThrown) {
+            //    console.error("generateTextRequest error occured: " + textStatus, errorThrown);
+            //});
+
+            //generateTextRequest.always(function() {
+            //    // reenable inputs
+            //    $inputs.prop("disabled", false);
+            //});
+        });
+    });
+</script>

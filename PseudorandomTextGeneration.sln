@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkovChain", "MarkovChain\MarkovChain.csproj", "{38A7F7BC-AD8E-4C45-BFEC-D6716CEA7DC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextGenerationWeb", "TextGenerationWeb\TextGenerationWeb.csproj", "{FBD0045B-DEBF-47A2-A138-EF057152ACBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{38A7F7BC-AD8E-4C45-BFEC-D6716CEA7DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38A7F7BC-AD8E-4C45-BFEC-D6716CEA7DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38A7F7BC-AD8E-4C45-BFEC-D6716CEA7DC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBD0045B-DEBF-47A2-A138-EF057152ACBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD0045B-DEBF-47A2-A138-EF057152ACBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD0045B-DEBF-47A2-A138-EF057152ACBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD0045B-DEBF-47A2-A138-EF057152ACBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

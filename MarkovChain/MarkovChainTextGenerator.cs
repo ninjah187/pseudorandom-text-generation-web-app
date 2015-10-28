@@ -10,7 +10,7 @@ namespace MarkovChain
     {
         private static readonly Random random = new Random();
 
-        public int NumberOfSentences { get; private set; }
+        public int NumberOfSentences { get; set; }
         public int CurrentSentenceNumber { get; private set; }
 
         public Dictionary<string, List<string>> FrequencyTable { get; private set; }
@@ -27,9 +27,16 @@ namespace MarkovChain
             CurrentSentenceNumber = 0;
         }
 
+        // bug: it crashes with dictionary containing words "halo halo halo."
         public string GetRandomChain()
         {
-            Reset();
+            return GetRandomChain(random.Next(1, 11));
+        }
+
+        public string GetRandomChain(int length)
+        {
+            NumberOfSentences = length;
+            CurrentSentenceNumber = 0;
 
             string chain = "";
 
@@ -38,14 +45,24 @@ namespace MarkovChain
 
             // ConstructChain(word, ref chain); recursive call
             chain = ConstructChain(word);
-            
+
             return chain;
+        }
+
+        public string GetRandomSentence()
+        {
+            return GetRandomChain(1);
         }
 
         // iteration
         private string ConstructChain(string word)
         {
             string chain = "";
+
+            // indicates whether chain is at beginning of new sentence
+            // so first word could be upper cased
+            bool beginningOfSentence = true;
+
             while (true)
             {
                 var wordDescendants = FrequencyTable[word];
@@ -66,18 +83,35 @@ namespace MarkovChain
                     }
                     else
                     {
+                        //if (beginningOfSentence)
+                        //{
+                        //    if (Char.IsLetter(desc[0]) || Char.IsNumber(desc[0]))
+                        //    {
+                        //        desc = desc.ToUpper();
+                        //        beginningOfSentence = false;
+                        //    }
+                        //}
                         chain += " " + desc;
                     }
 
-                    //word = desc;
-                    if (chain.Last() != '.')
+                    word = desc;
+                    if (chain.Last() == '.')
                     {
-                        word = desc;
+                        CurrentSentenceNumber++;
+                        //beginningOfSentence = true;
                     }
-                    else
+                    if (CurrentSentenceNumber >= NumberOfSentences)
                     {
                         return chain;
                     }
+                    //if (chain.Last() != '.' && CurrentSentenceNumber < NumberOfSentences)
+                    //{
+                    //    word = desc;
+                    //}
+                    //else
+                    //{
+                    //    CurrentSentenceNumber++;
+                    //}
                 }
             }
         }
