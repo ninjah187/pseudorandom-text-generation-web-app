@@ -12,7 +12,7 @@ namespace TextGenerationWeb.Controllers
     {
         private static readonly Random random = new Random();
 
-        public string GenerateText(InputText inputTextType, string userInputText = "", int numberOfSentences = -1)
+        public ActionResult GenerateText(InputText inputTextType, string userInputText = "", int numberOfSentences = -1)
         {
             var dictFileManager = new DictionaryFileManager();
             string path = "";
@@ -36,14 +36,16 @@ namespace TextGenerationWeb.Controllers
                     var dictGenerator = new DictionaryGenerator();
                     var d = dictGenerator.GenerateFrequencyTable(userInputText);
                     var g = new MarkovChainTextGenerator(d);
-                    return g.GetRandomChain(numberOfSentences);
+                    //return g.GetRandomChain(numberOfSentences);
+                    return PartialView(new Chain(inputTextType, g.GetRandomChain(numberOfSentences)));
             }
 
             var dict = dictFileManager.Load(path);
 
             var generator = new MarkovChainTextGenerator(dict);
 
-            return generator.GetRandomChain(numberOfSentences);
+            //return generator.GetRandomChain(numberOfSentences);
+            return PartialView(new Chain(inputTextType, generator.GetRandomChain(numberOfSentences)));
         }
 
         //public string GenerateText(string userInputText)

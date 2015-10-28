@@ -7,22 +7,33 @@
 
     <title>Markov chain text generator</title>
 
-    <link rel="stylesheet" href="/Styles/bootstrap.min.css" >
+    <link rel="stylesheet" href="/Styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/Styles/bootstrap-theme.css">
+    <link rel="stylesheet" href="/Styles/mcg-custom.css">
     <script type="text/javascript" src="/Scripts/jquery-1.11.3.min.js"></script>
 </head>
 <body>
 <div class="container">
 
     <header>
-        <div class="jumbotron hidden-xs">
-            <h2>Markov chain text generator</h2>
+        <div id="mcg-title-jumbotron" class="jumbotron hidden-xs">
+            <h2>Generator tekstu na podst. łańcucha Markowa</h2>
         </div>
         <div class="visible-xs">
-            <h2>Markov chain text generator</h2>
+            <h2>Generator tekstu na podst. łańcucha Markowa</h2>
         </div>
     </header>
     @RenderBody()
 </div>
+
+    <footer class="mcg-footer">
+        <div class="container">
+            <ul class="list-inline">
+                <li><small><a href="#">Github repo</a></small></li>
+                <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> <small>Contact with author</small></a></li>
+            </ul>
+        </div>
+    </footer>
 
 <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
 </body>

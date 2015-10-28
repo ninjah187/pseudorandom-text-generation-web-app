@@ -1,0 +1,154 @@
+﻿/* sticky footer styles */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.mcg-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    padding-bottom: 0;
+    /*background-color: #f5f5f5;*/
+    background-color: rgba(245, 245, 245, 0.8);
+}
+
+/*----------------------*/
+
+html {
+    background: url('../Images/Open-book-empty-desk.jpg') no-repeat center fixed;
+    /*background-size: 1440px 990px;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    background: transparent;
+    color: black;
+}
+
+a {
+    color: #d2691e;
+}
+
+a:visited {
+    color: #d2691e;
+}
+
+textarea {
+    resize: none;
+    padding: 10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    background: rgba(255, 255, 255, 1);
+}
+
+h5 {
+    font-weight: bold;
+}
+
+#mcg-input-select, #mcg-custom-sentences-limit-input {
+    color: black;
+    background: white;
+}
+
+.mcg-interactive-element {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    opacity: 0.8;
+}
+
+.mcg-interactive-element:hover, .mcg-interactive-element:focus, .mcg-interactive-element:active {
+    border-color: #d2691e;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+    outline: 0 none;
+    opacity: 1;
+}
+
+/*textarea, input, select, #mcg-input-select, #mcg-custom-sentences-limit-input, #mcg-btn-submit {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    opacity: 0.8;
+}
+
+textarea:hover, textarea:focus, input:hover, input:focus, input:active, select:hover, select:focus, select:active,
+#mcg-input-select:focus, #mcg-input-select:active, #mcg-input-select:hover, #mcg-custom-sentences-limit-input:focus,
+#mcg-custom-sentences-limit-input:hover, #mcg-btn-submit:hover {
+    border-color: #d2691e;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+    outline: 0 none;
+    opacity: 1;
+}*/
+
+#mcg-input-select option:hover {
+    background: #d2691e;
+}
+
+textarea:focus {
+    
+}
+
+p {
+    
+}
+
+.mcg-btn-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h3 > small {
+    font-size: x-small;
+}
+
+.form-group > p > small {
+    font-size: x-small;
+    font-weight: bold;
+    color: #555;
+}
+
+#mcg-user-input-text {
+    width: 0;
+    height: 0;
+}
+
+#mcg-user-input-text-container {
+    margin-top: 15px;
+    opacity: 0;
+}
+
+#mcg-title-jumbotron {
+    background: transparent;
+    /*background: url('../Images/Open-book-empty-desk.jpg');
+    background-size: 1000px 1000px;
+    background-position: center;*/
+}
+
+#mcg-output-text-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#mcg-input-form-container {
+    margin-bottom: 20px;
+}
