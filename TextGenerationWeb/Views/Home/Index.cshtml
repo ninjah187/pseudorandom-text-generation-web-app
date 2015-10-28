@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="mcg-custom-sentences-limit-input">Ilość zdań:</label>
-                    <input id="mcg-custom-sentences-limit-input" class="form-control mcg-interactive-element" type="text"/>
+                    <input id="mcg-custom-sentences-limit-input" class="form-control mcg-interactive-element" type="text" value="10" />
                     <p class="text-right"><small>Limit: 50</small></p>
                 </div>
 
@@ -52,10 +52,28 @@ function TextGenerationAjaxRequestSender() {
         var $basedOnText = $("#mcg-based-on-text");
         var $userInputText = $("#mcg-user-input-text");
         var $customSentencesLimit = $("#mcg-custom-sentences-limit-input");
-
+        
         var $outputTextContainer = $("#mcg-output-text-container");
         var $userInputTextContainer = $("#mcg-user-input-text-container");
         
+        var validationPassed = false;
+
+        function validateSentenceLimit() {
+            validationPassed = false;
+
+            var value = $customSentencesLimit.val();
+
+            // isFinite(String(value))) - returns true if value is real number
+
+            if (value < 0 || value > 50 || isFinite(String(value)) === false) {
+                $customSentencesLimit.css("color", "red");
+                return;
+            }
+
+            $customSentencesLimit.css("color", "black");
+            validationPassed = true;
+        }
+
         function showUserInputText() {
             $userInputTextContainer.animate({
                 opacity: "1"
@@ -99,6 +117,8 @@ function TextGenerationAjaxRequestSender() {
             showUserInputText();
         }
 
+        validateSentenceLimit();
+
         // http://stackoverflow.com/questions/456177/function-overloading-in-javascript-best-practices
         function executeGenerateTextRequest(userInputText) {
             //var requestUrl = $form.attr("action");
@@ -120,27 +140,23 @@ function TextGenerationAjaxRequestSender() {
 
         $inputSelect.change(function() {
             if ($(this).val() === "255") {
-                //$outputTextContainer.hide();
-                //$userInputTextContainer.show();
                 showUserInputText();
             } else {
-                //if ($outputTextContainer.is(":visible") === false) {
-                //    $outputTextContainer.show();
-                //    $userInputTextContainer.hide();
-                //}
-                //hideUserInputText(function() {
-                //    $userInputTextContainer.hide();
-                //});
                 hideUserInputText();
             }
         });
 
-        $customSentencesLimit.change(function() {
-            
+        
+        $customSentencesLimit.change(function () {
+            validateSentenceLimit();
         });
 
         $("#mcg-text-input-piece-form").submit(function(event) {
             event.preventDefault();
+
+            if (validationPassed === false) {
+                return;
+            }
 
             $basedOnText.text($inputSelect.find(":selected").text());
 
