@@ -78,18 +78,15 @@
             $userInputTextContainer.css("height", "auto");
             $userInputTextContainer.animate({
                 opacity: "1"
+            }, 500);
+            $userInputText.animate({
+                width: "100%"
             },
             500,
             function() {
-                $userInputText.animate({
-                    width: "100%"
-                },
-                500,
-                function() {
-                    $(this).animate({
-                        height: "250px"
-                    }, 500);
-                });
+                $(this).animate({
+                    height: "250px"
+                }, 500);
             });
         }
 
