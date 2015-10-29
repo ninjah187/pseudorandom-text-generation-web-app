@@ -42,10 +42,6 @@
 
 </div>
 <script type="text/javascript">
-function TextGenerationAjaxRequestSender() {
-    this.generateTextRequest = null;
-}
-
     $(document).ready(function() {
         var generateTextRequest;
 
@@ -79,9 +75,9 @@ function TextGenerationAjaxRequestSender() {
         }
 
         function showUserInputText() {
+            $userInputTextContainer.css("height", "auto");
             $userInputTextContainer.animate({
                 opacity: "1"
-                // width: 0
             },
             500,
             function() {
@@ -110,7 +106,11 @@ function TextGenerationAjaxRequestSender() {
                 function() {
                     $userInputTextContainer.animate({
                         opacity: "0"
-                    }, 500);
+                    },
+                    500,
+                    function() {
+                        $userInputTextContainer.css("height", "0");
+                    });
                 });
             });
         }

@@ -133,6 +133,7 @@ h3 > small {
 }
 
 #mcg-user-input-text-container {
+    height: 0;
     margin-top: 15px;
     opacity: 0;
 }
