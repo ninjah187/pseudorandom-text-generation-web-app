@@ -85,7 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Images\Open-book-empty-desk.jpg" />
+    <Content Include="Images\book-bg-small.jpg" />
+    <Content Include="Images\book-bg-smaller.jpg" />
+    <Content Include="Images\book-bg.jpg" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
     <Content Include="Styles\bootstrap-theme.css" />

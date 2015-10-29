@@ -16,7 +16,8 @@
                 </div>
                 <div class="form-group">
                     <label for="mcg-custom-sentences-limit-input">Ilość zdań:</label>
-                    <input id="mcg-custom-sentences-limit-input" class="form-control mcg-interactive-element" type="text" value="10" />
+                    <input id="mcg-custom-sentences-limit-input" class="form-control mcg-interactive-element" type="text" 
+                           value="10" autocomplete="off" />
                     <p class="text-right"><small>Limit: 50</small></p>
                 </div>
 
@@ -88,7 +89,7 @@ function TextGenerationAjaxRequestSender() {
                     width: "100%"
                 },
                 500,
-                function () {
+                function() {
                     $(this).animate({
                         height: "250px"
                     }, 500);
@@ -133,7 +134,7 @@ function TextGenerationAjaxRequestSender() {
                 data: {
                     inputTextType: $inputSelect.val(),
                     userInputText: $userInputText.val(),
-                    numberOfSentences: $("#mcg-custom-sentences-limit-input").val()
+                    numberOfSentences: $customSentencesLimit.val()
                 }
             });
 

@@ -22,8 +22,22 @@ body {
 
 /*----------------------*/
 
+/* http://stackoverflow.com/questions/9506069/media-queries-and-background-images */
+@media (min-width: 801px) {
+    html {
+        background: url('../Images/book-bg.jpg') no-repeat center fixed;
+    }
+}
+
+@media (max-width: 800px) {
+    html {
+        background: url('../Images/book-bg-small.jpg') no-repeat center fixed;
+    }
+}
+
 html {
-    background: url('../Images/Open-book-empty-desk.jpg') no-repeat center fixed;
+    /*background: url('../Images/book-bg.jpg') no-repeat center fixed;*/
+    /*background: no-repeat center fixed;*/
     /*background-size: 1440px 990px;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
