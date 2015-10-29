@@ -77,25 +77,12 @@ h5 {
     opacity: 1;
 }
 
-/*textarea, input, select, #mcg-input-select, #mcg-custom-sentences-limit-input, #mcg-btn-submit {
-    -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    -ms-transition: all 0.30s ease-in-out;
-    -o-transition: all 0.30s ease-in-out;
-    opacity: 0.8;
-}
-
-textarea:hover, textarea:focus, input:hover, input:focus, input:active, select:hover, select:focus, select:active,
-#mcg-input-select:focus, #mcg-input-select:active, #mcg-input-select:hover, #mcg-custom-sentences-limit-input:focus,
-#mcg-custom-sentences-limit-input:hover, #mcg-btn-submit:hover {
-    border-color: #d2691e;
-    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
-    outline: 0 none;
-    opacity: 1;
-}*/
-
 #mcg-input-select option:hover {
     background: #d2691e;
+}
+
+#mcg-btn-submit:hover {
+    background: white;
 }
 
 textarea:focus {
@@ -144,7 +131,7 @@ h3 > small {
 }
 
 #mcg-output-text-container {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.3);
     padding: 10px;
     border-radius: 5px;
 }

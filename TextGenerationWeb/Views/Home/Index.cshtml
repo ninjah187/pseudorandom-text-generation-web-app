@@ -20,7 +20,10 @@
                     <p class="text-right"><small>Limit: 50</small></p>
                 </div>
 
-                <button type="submit" id="mcg-btn-submit" class="btn btn-default text-center mcg-interactive-element">Generuj</button>
+                <div class="form-group text-center">
+                    <button type="submit" id="mcg-btn-submit" class="btn btn-default mcg-interactive-element">Generuj</button>
+                </div>
+                
             </form>
             <div id="mcg-user-input-text-container">
                 <h5>Twój tekst:</h5>
@@ -77,6 +80,7 @@ function TextGenerationAjaxRequestSender() {
         function showUserInputText() {
             $userInputTextContainer.animate({
                 opacity: "1"
+                // width: 0
             },
             500,
             function() {

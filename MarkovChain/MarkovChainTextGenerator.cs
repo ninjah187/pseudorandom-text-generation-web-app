@@ -35,6 +35,11 @@ namespace MarkovChain
 
         public string GetRandomChain(int length)
         {
+            if (FrequencyTable.Count == 0)
+            {
+                return "";
+            }
+
             NumberOfSentences = length;
             CurrentSentenceNumber = 0;
 
