@@ -140,7 +140,20 @@
 
             generateTextRequest.done(function(response) {
                 $outputText.html(response);
+                
+                if ($outputText.css("color") === "red") {
+                    $outputText.css("color", "black");
+                }
             });
+
+            generateTextRequest.fail(function(jqXHR, textStatus, errorThrown) {
+                $outputText.html("Błąd żądania do serwera.");
+                $outputText.css("color", "red");
+            });
+
+            //generateTextRequest.always(function() {
+
+            //});
         }
 
         $inputSelect.change(function() {
