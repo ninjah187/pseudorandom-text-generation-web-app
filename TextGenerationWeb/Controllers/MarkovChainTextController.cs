@@ -14,22 +14,20 @@ namespace TextGenerationWeb.Controllers
 
         public ActionResult GenerateText(InputText inputTextType, string userInputText = "", int numberOfSentences = -1)
         {
-            var dictFileManager = new DictionaryFileManager();
-            string path = "";
-
             if (numberOfSentences == -1)
             {
                 numberOfSentences = random.Next(1, 11);
             }
 
+            Dictionary<string, List<string>> dict = null;
             switch (inputTextType)
             {
                 case InputText.InDesertAndWilderness:
-                    path = @"D:\Pisane\C#\PseudorandomTextGeneration\TextGenerationWeb\Dictionaries\puszcza.dict";
+                    dict = PredefinedDictionaries.InDesertAndWilderness;
                     break;
 
                 case InputText.LordOfTheRings:
-                    path = @"D:\Pisane\C#\PseudorandomTextGeneration\TextGenerationWeb\Dictionaries\lotr_full.dict";
+                    dict = PredefinedDictionaries.Lotr;
                     break;
 
                 case InputText.Other:
@@ -40,18 +38,10 @@ namespace TextGenerationWeb.Controllers
                     return PartialView(new Chain(inputTextType, g.GetRandomChain(numberOfSentences)));
             }
 
-            var dict = dictFileManager.Load(path);
-
             var generator = new MarkovChainTextGenerator(dict);
 
             //return generator.GetRandomChain(numberOfSentences);
             return PartialView(new Chain(inputTextType, generator.GetRandomChain(numberOfSentences)));
         }
-
-        //public string GenerateText(string userInputText)
-        //{
-        //    var dictGenerator = new DictionaryGenerator();
-        //    var dict = 
-        //}
     }
 }

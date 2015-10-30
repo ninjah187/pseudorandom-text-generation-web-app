@@ -137,10 +137,7 @@
 
             generateTextRequest.done(function(response) {
                 $outputText.html(response);
-                
-                if ($outputText.css("color") === "red") {
-                    $outputText.css("color", "black");
-                }
+                $outputText.css("color", "black");
             });
 
             generateTextRequest.fail(function(jqXHR, textStatus, errorThrown) {

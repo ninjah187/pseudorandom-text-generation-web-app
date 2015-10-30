@@ -6,17 +6,25 @@ using System.Threading.Tasks;
 
 namespace MarkovChain
 {
+    /// <summary>
+    /// Generates pseudorandom Markov chain text based on delivered Frequency Table.
+    /// Because of web apps security generated sentences amount limit is 50.
+    /// Change it by editing value of SentencesLimit variable.
+    /// </summary>
     public class MarkovChainTextGenerator
     {
         private static readonly Random random = new Random();
 
         public int NumberOfSentences { get; set; }
         public int CurrentSentenceNumber { get; private set; }
+        public int SentencesLimit { get; set; } // for web apps security
 
         public Dictionary<string, List<string>> FrequencyTable { get; private set; }
 
         public MarkovChainTextGenerator(Dictionary<string, List<string>> frequencyTable)
         {
+            SentencesLimit = 50;
+
             FrequencyTable = frequencyTable;
             Reset();
         }
@@ -105,7 +113,7 @@ namespace MarkovChain
                         CurrentSentenceNumber++;
                         //beginningOfSentence = true;
                     }
-                    if (CurrentSentenceNumber >= NumberOfSentences)
+                    if (CurrentSentenceNumber >= NumberOfSentences || CurrentSentenceNumber > SentencesLimit)
                     {
                         return chain;
                     }

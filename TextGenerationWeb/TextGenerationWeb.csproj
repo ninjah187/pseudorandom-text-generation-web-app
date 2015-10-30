@@ -105,6 +105,7 @@
     </Compile>
     <Compile Include="Models\Chain.cs" />
     <Compile Include="Models\InputText.cs" />
+    <Compile Include="PredefinedDictionaries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
