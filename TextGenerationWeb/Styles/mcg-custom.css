@@ -50,11 +50,7 @@ body {
     color: black;
 }
 
-a {
-    color: #d2691e;
-}
-
-a:visited {
+a, a:hover, a:link, a:visited, a:active {
     color: #d2691e;
 }
 
