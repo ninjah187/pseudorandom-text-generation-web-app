@@ -1,7 +1,15 @@
 # Markov chain text generator
+##### Beware: english language and more predefined dictionaries coming soon!
+
+<img src="http://i.imgur.com/DVbjlUR.png" width="400" />
 
 #### What does it do?
-It uses a Markov chain to generate pseudo-random text.
+It uses a Markov chain to generate pseudo-random text. You can use predefined dictionaries based on following texts:
+
+1. "W pustyni i w puszczy", H. Sienkiewicz
+2. "Władca pierścieni" (fragments), J. R. R. Tolkien
+
+You can also use your own input text.
 
 #### What the repo contains?
 It consists of two projects. One contains classes used for generating Markov chain based text. The other one is web app which provides a nice, friendly user interface.
