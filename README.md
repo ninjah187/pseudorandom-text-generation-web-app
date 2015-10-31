@@ -1,7 +1,7 @@
 # Markov chain text generator
-##### Beware: english language and more predefined dictionaries coming soon!
+##### Beware: English language and more predefined dictionaries coming soon!
 
-<img src="http://i.imgur.com/DVbjlUR.png" width="400" />
+<img src="http://i.imgur.com/DVbjlUR.png" width="400" style="margin-left: auto; margin-right: auto;" />
 
 #### What does it do?
 It uses a Markov chain to generate pseudo-random text. You can use predefined dictionaries based on following texts:
