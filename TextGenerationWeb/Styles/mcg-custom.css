@@ -50,7 +50,7 @@ body {
     color: black;
 }
 
-a, a:hover, a:link, a:visited, a:active {
+a, a:hover, a:link, a:visited, a:active, .mcg-footer-li {
     color: #d2691e;
 }
 
