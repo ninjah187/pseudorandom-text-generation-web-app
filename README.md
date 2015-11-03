@@ -1,5 +1,5 @@
 # Markov chain text generator
-##### Beware: English language and more predefined dictionaries coming soon!
+##### Beware: English language and more predefined directories coming soon!
 
 <img src="http://i.imgur.com/DVbjlUR.png" width="400" style="margin-left: auto; margin-right: auto;" />
 
