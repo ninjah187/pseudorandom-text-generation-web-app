@@ -1,6 +1,0 @@
-D:\Pisane\C#\PseudorandomTextGeneration\MarkovChain\bin\Debug\MarkovChain.exe.config
-D:\Pisane\C#\PseudorandomTextGeneration\MarkovChain\bin\Debug\MarkovChain.exe
-D:\Pisane\C#\PseudorandomTextGeneration\MarkovChain\bin\Debug\MarkovChain.pdb
-D:\Pisane\C#\PseudorandomTextGeneration\MarkovChain\obj\Debug\MarkovChain.csprojResolveAssemblyReference.cache
-D:\Pisane\C#\PseudorandomTextGeneration\MarkovChain\obj\Debug\MarkovChain.exe
-D:\Pisane\C#\PseudorandomTextGeneration\MarkovChain\obj\Debug\MarkovChain.pdb

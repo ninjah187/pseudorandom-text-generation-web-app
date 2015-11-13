@@ -1,0 +1,68 @@
+# compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.cache
+*.suo
+
+# include dlls if they're in the NuGet packages directory
+!/packages/*/lib/*.dll
+!/packages/*/lib/*/*.dll
+
+# include dlls if they're in the CommonReferences directory
+!*CommonReferences/*.dll
+
+# VS upgrade stuff
+UpgradeLog.XML
+_UpgradeReport_Files/
+
+# directories
+bin/
+obj/
+TestResults/
+
+# web publish log
+*.Publish.xml
+
+# Resharper
+/_ReSharper.*
+*.ReSharper.*
+
+# packages
+	# it’s better to unpack these files and commit the raw source
+	# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# logs and databases
+*.log
+*.sqlite
+
+# OS generated files
+.DS_Store?
+enthumbs.db
+Icon?
+Thumbs.db
+[Bb]in
+[Oo]bj
+[Tt]est[Rr]esults
+*.suo
+*.user
+*.[Cc]ache
+*[Rr]esharper*
+packages
+NuGet.exe
+*.exe
+*.dll
+*.nupkg
+*.ncrunchsolution
+*.dot[Cc]over
